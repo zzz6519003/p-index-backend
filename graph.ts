@@ -1,4 +1,4 @@
-import { request } from 'graphql-request';
+import { request } from 'npm:graphql-request';
 import { Application, Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 // import { fetch } from "https://deno.land/x/node_fetch@0.2.0/mod.js";
 
