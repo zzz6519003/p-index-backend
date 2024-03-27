@@ -34,7 +34,20 @@ const endpoint = 'https://ormponder.darwinia.network/graphql';
 const app = new Application();
 const router = new Router();
 
-router.get("/graphql-data", async (context) => {
+router.get("/:queryType", async (context) => {
+  const queryType = context.params.queryType;
+  let query = `{
+    ${queryType} {
+      items {
+        id,
+        messageFrom,
+        messageChannel,
+        messageEncoded,
+        messageFromChainId,
+        messageToChainId
+      }
+    }
+  }`;
   try {
     const data = await request(endpoint, query);
     context.response.body = data;
