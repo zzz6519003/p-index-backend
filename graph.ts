@@ -25,7 +25,27 @@ query myQuery {
 // GraphQL API的URL
 const endpoint = 'https://ormponder.darwinia.network/graphql';
 
-// 发送请求并获取数据
-request(endpoint, query)
-  .then((data) => console.log(data))
-  .catch((error) => console.error(error));
+// // 发送请求并获取数据
+// request(endpoint, query)
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
+
+
+const app = new Application();
+const router = new Router();
+
+router.get("/graphql-data", async (context) => {
+  try {
+    const data = await request(endpoint, query);
+    context.response.body = data;
+  } catch (error) {
+    context.response.status = 500;
+    context.response.body = { message: "Internal Server Error", error: error.message };
+  }
+});
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+console.log("Server running on http://localhost:8000");
+await app.listen({ port: 8000 });
