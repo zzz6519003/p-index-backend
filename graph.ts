@@ -3,6 +3,8 @@ import { Application, Router, Context } from "https://deno.land/x/oak@v11.1.0/mo
 // import { fetch } from "https://deno.land/x/node_fetch@0.2.0/mod.js";
 import YAML from 'npm:yaml';
 import { Network } from './lib/network.js';
+import './lib/test.js';
+
 
 // GraphQL查询
 const query = `
@@ -79,4 +81,4 @@ const parsedData = YAML.parse(data);
 // console.log(parsedData["shared"]["contracts"].ORMP.networks);
 // console.log("hello");
 // Network._all();
-console.log(await Network._all());
+// console.log(await Network._all());
