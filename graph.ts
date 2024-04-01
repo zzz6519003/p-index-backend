@@ -1,7 +1,8 @@
 import { request } from 'npm:graphql-request';
 import { Application, Router, Context } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 // import { fetch } from "https://deno.land/x/node_fetch@0.2.0/mod.js";
-
+import YAML from 'npm:yaml';
+import { Network } from './lib/network.js';
 
 // GraphQL查询
 const query = `
@@ -35,7 +36,7 @@ const app = new Application();
 const router = new Router();
 
 // CORS中间件
-app.use(async (ctx: Context, next: () => Promise<void>) => {
+app.use(async (ctx: Context, next: () => Promise<unknown>) => {
   ctx.response.headers.set("Access-Control-Allow-Origin", "*");
   ctx.response.headers.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   ctx.response.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -57,7 +58,7 @@ router.get("/:queryType", async (context) => {
     }
   }`;
   try {
-    const data = await request(endpoint, query);
+    const data: Record<string, unknown> = await request(endpoint, query);
     context.response.body = data;
   } catch (error) {
     context.response.status = 500;
@@ -69,4 +70,13 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 console.log("Server running on http://localhost:8000");
-await app.listen({ port: 8000 });
+app.listen({ port: 8000 });
+
+// const data = await readYaml("pindex.yml");
+const data = await Deno.readTextFile("pindex.yml");
+const parsedData = YAML.parse(data);
+// console.log(parsedData["shared"]["networks"]);
+// console.log(parsedData["shared"]["contracts"].ORMP.networks);
+// console.log("hello");
+// Network._all();
+console.log(await Network._all());

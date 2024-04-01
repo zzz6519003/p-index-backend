@@ -1,0 +1,183 @@
+shared:
+  networks:
+    pangolin:
+      chain_id: 43
+      rpc: https://pangolin-rpc.darwinia.network
+      explorer: https://pangolin.subscan.io/
+      max_scan_range: 2000
+      polling_interval: 1
+    arbitrum_sepolia:
+      chain_id: 421614
+      rpc: https://arb-sepolia.g.alchemy.com/v2/gNzX98s8sl6zRewSpK0VxNpV7k3ijNyM
+      explorer: https://sepolia.arbiscan.io/
+      max_scan_range: 20000
+      polling_interval: 5
+    sepolia:
+      chain_id: 11155111
+      rpc: https://eth-sepolia.g.alchemy.com/v2/FhLOy6K5zgHgrIJmvXxKHYV6flxr4Moy
+      explorer: https://sepolia.etherscan.io/
+      max_scan_range: 20000
+      polling_interval: 5
+    darwinia:
+      chain_id: 46
+      rpc: http://c1.collator.itering.io:9944
+      explorer: https://darwinia.subscan.io/
+      max_scan_range: 2000
+      polling_interval: 1
+    crab:
+      chain_id: 44
+      rpc: http://38.242.135.236:9944
+      explorer: https://crab.subscan.io/
+      max_scan_range: 2000
+      polling_interval: 1
+    arbitrum:
+      chain_id: 42161
+      rpc: https://arb-mainnet.g.alchemy.com/v2/AQIhKIm1PFPLCbxhqSDWQC6VkJw-TYGJ
+      explorer: https://arbiscan.io/
+      max_scan_range: 20000
+      polling_interval: 5
+    ethereum:
+      chain_id: 1
+      rpc: https://eth-mainnet.g.alchemy.com/v2/pkt_-aa5PfxIsH-BodWqC9KVtUMAF_0y
+      explorer: https://etherscan.io/
+      max_scan_range: 20000
+      polling_interval: 5
+    polygon:
+      chain_id: 137
+      rpc: https://polygon-mainnet.g.alchemy.com/v2/Bd42k32TaBuS3oOFFyq7onYFgI6wQywl
+      explorer: https://polygonscan.com/
+      max_scan_range: 20000
+      polling_interval: 5
+    blast:
+      chain_id: 81457
+      rpc: https://rpc.blast.io
+      explorer: https://blastexplorer.io/
+      max_scan_range: 20000
+      polling_interval: 5
+  contracts:
+    ORMP:
+      abi: config/abis/ORMP.json
+      networks: 
+        - name: pangolin
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 2275722
+        - name: arbitrum_sepolia
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 860637
+        - name: sepolia
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 4728915
+        - name: crab
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 1658340
+        - name: darwinia
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 1389405
+        - name: arbitrum
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 148555316
+        - name: ethereum
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 18753079
+        - name: polygon
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 54050856
+        - name: blast
+          address: "0x00000000001523057a05d6293C1e5171eE33eE0A"
+          start_block: 364290
+    ORMPOracle:
+      abi: config/abis/ORMPOracle.json
+      networks: 
+        - name: pangolin
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 2288092
+        - name: arbitrum_sepolia
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 11631553
+        - name: sepolia
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 5217030
+        - name: crab
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 2234031
+        - name: darwinia
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 2013339
+        - name: arbitrum
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 178258595
+        - name: ethereum
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 19174438
+        - name: polygon
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 54050858
+        - name: blast
+          address: "0x0000000003ebeF32D8f0ED406a5CA8805c80AFba"
+          start_block: 364290
+    Relayer:
+      abi: config/abis/Relayer.json
+      networks:
+        - name: pangolin
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 2275722
+        - name: arbitrum_sepolia
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 860637
+        - name: sepolia
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 4728915
+        - name: crab
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 1658340
+        - name: darwinia
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 1389408
+        - name: arbitrum
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 148555382
+        - name: ethereum
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 18753082
+        - name: polygon
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 54050858
+        - name: blast
+          address: "0x0000000000808fE9bDCc1d180EfbF5C53552a6b1"
+          start_block: 364290
+    ORMPPort:
+      abi: config/abis/ORMPPort.json
+      networks: 
+        - name: pangolin
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 2275722
+        - name: arbitrum_sepolia
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 10752382
+        - name: sepolia
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 5189006
+        - name: crab
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 2193430
+        - name: darwinia
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 2013607
+        - name: arbitrum
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 178266390
+        - name: ethereum
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 19174711
+        - name: polygon
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 54051848
+        - name: blast
+          address: "0x0000000005d961F950adA391C1511c92bbc64D9F"
+          start_block: 365137
+    SubAPISignaturePub:
+      abi: config/abis/SubAPISignaturePub.json
+      networks:
+        - name: darwinia
+          address: "0x57dd62e0986a61a269c769b107a5a7952d73b7ed"
+          start_block: 1900827

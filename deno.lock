@@ -4,7 +4,8 @@
     "specifiers": {
       "npm:express@4": "npm:express@4.18.2",
       "npm:graphql-request": "npm:graphql-request@6.1.0_graphql@16.8.1",
-      "npm:graphql-request@^6.1.0": "npm:graphql-request@6.1.0_graphql@16.8.1"
+      "npm:graphql-request@^6.1.0": "npm:graphql-request@6.1.0_graphql@16.8.1",
+      "npm:yaml": "npm:yaml@2.4.1"
     },
     "npm": {
       "@graphql-typed-document-node/core@3.2.0_graphql@16.8.1": {
@@ -401,6 +402,10 @@
           "tr46": "tr46@0.0.3",
           "webidl-conversions": "webidl-conversions@3.0.1"
         }
+      },
+      "yaml@2.4.1": {
+        "integrity": "sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==",
+        "dependencies": {}
       }
     }
   },
